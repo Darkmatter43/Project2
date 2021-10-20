@@ -15,7 +15,26 @@ armaments.get('/seed',(req,res)=>{
             {
                 name:'Buster Sword',
                 description:'Larger than life',
-                owner:'Cloud Strife'
+                owner:'Cloud Strife',
+                videoGame:'Final Fantasy VII'
+            },
+            {
+                name:'Master Sword',
+                description:'A sword powerful enough to banish evil',
+                owner:'Link',
+                videoGame:'Legend of Zelda Franchise'
+            },
+            {
+                name:'Keyblade',
+                description:'A mysterious weapon that chooses its master',
+                owner:'Sora',
+                videoGame:'Kingdom Hearts'
+            },
+            {
+                name:'Portal Gun',
+                description:'A device that shoots beams of light that can create portals on impact. These portals allow all objects that fit through it to travel between them, conserving momentum as they do',
+                owner:'Chell',
+                videoGame:'Portal'
             }
         ],
         (err,data)=>{
