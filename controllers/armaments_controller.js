@@ -4,7 +4,12 @@ const armaments = express.Router()
 
 //INDEX ROUTE
 armaments.get('/',(req,res)=>{
-    res.render('armaments/index.ejs')
+    Armament.find({},(err,allArmaments)=>{
+        res.render('armaments/index.ejs',{
+            armaments: allArmaments
+        })
+    })
+    
 })
 
 //SEED ROUTE - This will remove ALL current content in the DB. Only use to reset to default.

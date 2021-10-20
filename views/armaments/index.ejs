@@ -5,7 +5,11 @@
 </head>
 <body>
     <h1>Alternate Armaments</h1>
-    
-
+        <%for(i=0;i< armaments.length;i++){%>
+            <div class='card'>
+                <%=armaments[i].img%>
+                <li><%=armaments[i].name%></li>
+            </div>
+        <%}%>
 </body>
 </html>

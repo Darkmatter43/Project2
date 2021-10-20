@@ -64,3 +64,9 @@ app.get('/' , (req, res) => {
 //Listener
 //___________________
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+
+//___________________
+//Mongod error display
+//___________________
+db.on('error', err => console.log(err.message + ' somthing happened...'))
+db.on('disconnected', () => console.log('mongo disconnected'))
