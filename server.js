@@ -48,8 +48,10 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //Controllers
 //___________________
 const armamentsController = require('./controllers/armaments_controller.js')
-
+const userController = require('./controllers/users_controller.js')
 app.use('/armaments',armamentsController)
+app.use('/users',userController)
+
 
 
 //___________________
@@ -64,9 +66,3 @@ app.get('/' , (req, res) => {
 //Listener
 //___________________
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
-
-//___________________
-//Mongod error display
-//___________________
-db.on('error', err => console.log(err.message + ' somthing happened...'))
-db.on('disconnected', () => console.log('mongo disconnected'))
