@@ -6,7 +6,8 @@ const armaments = express.Router()
 armaments.get('/',(req,res)=>{
     Armament.find({},(err,allArmaments)=>{
         res.render('armaments/index.ejs',{
-            armaments: allArmaments
+            armaments: allArmaments,
+            currentUser:req.session.currentUser
         })
     })
     
