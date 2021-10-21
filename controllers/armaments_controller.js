@@ -21,6 +21,15 @@ armaments.get('/',(req,res)=>{
     
 })
 
+//EDIT ROUTE
+armaments.get('/:id/edit',(req,res)=>{
+    Armament.findById(req.params.id,(err,foundArmament)=>{
+        res.render('armaments/edit.ejs',{
+            armament:foundArmament,
+        })
+    })
+})
+
 //NEW ROUTE
 armaments.get('/new',(req,res)=>{
     res.render('armaments/new.ejs')
