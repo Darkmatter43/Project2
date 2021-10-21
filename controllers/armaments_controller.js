@@ -58,6 +58,13 @@ armaments.get('/:id',(req,res)=>{
     })
 })
 
+//DELETE ROUTE
+armaments.delete('/:id',(req,res)=>{
+    Armament.findByIdAndRemove(req.params.id,(err,deletedArmament)=>{
+        res.redirect('/')
+    })
+})
+
 //SEED ROUTE - This will remove ALL current content in the DB. Only use to reset to default.
 armaments.get('/seed',(req,res)=>{
     Armament.collection.drop()
