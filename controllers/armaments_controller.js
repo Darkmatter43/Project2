@@ -30,6 +30,13 @@ armaments.get('/:id/edit',(req,res)=>{
     })
 })
 
+//UPDATE ROUTE
+armaments.put('/:id',(req,res)=>{
+    Armament.findByIdAndUpdate(req.params.id,req.body,{new:true},(err,updatedArmament)=>{
+        res.redirect('/armaments/'+req.params.id)
+    })
+})
+
 //NEW ROUTE
 armaments.get('/new',(req,res)=>{
     res.render('armaments/new.ejs')
