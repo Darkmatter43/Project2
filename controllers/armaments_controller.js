@@ -35,6 +35,13 @@ armaments.get('/new',(req,res)=>{
     res.render('armaments/new.ejs')
 })
 
+//CREATE ROUTE
+armaments.post('/',(req,res)=>{
+    Armament.create(req.body,(err,createdArmament)=>{
+        res.redirect('/')
+    })
+})
+
 //SHOW ROUTE
 armaments.get('/:id',(req,res)=>{
     Armament.findById(req.params.id,(err,foundArmament)=>{
