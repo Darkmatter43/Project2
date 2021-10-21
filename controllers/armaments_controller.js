@@ -22,10 +22,11 @@ armaments.get('/',(req,res)=>{
 })
 
 //EDIT ROUTE
-armaments.get('/:id/edit',(req,res)=>{
+armaments.get('/:id/edit',isAuthenticated,(req,res)=>{
     Armament.findById(req.params.id,(err,foundArmament)=>{
         res.render('armaments/edit.ejs',{
             armament:foundArmament,
+            currentUser:req.session.currentUser
         })
     })
 })
@@ -38,7 +39,7 @@ armaments.put('/:id',(req,res)=>{
 })
 
 //NEW ROUTE
-armaments.get('/new',(req,res)=>{
+armaments.get('/new',isAuthenticated,(req,res)=>{
     res.render('armaments/new.ejs')
 })
 
@@ -59,7 +60,7 @@ armaments.get('/:id',(req,res)=>{
 })
 
 //DELETE ROUTE
-armaments.delete('/:id',(req,res)=>{
+armaments.delete('/:id',isAuthenticated,(req,res)=>{
     Armament.findByIdAndRemove(req.params.id,(err,deletedArmament)=>{
         res.redirect('/')
     })
