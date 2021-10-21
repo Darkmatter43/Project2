@@ -26,6 +26,15 @@ armaments.get('/new',(req,res)=>{
     res.render('armaments/new.ejs')
 })
 
+//SHOW ROUTE
+armaments.get('/:id',(req,res)=>{
+    Armament.findById(req.params.id,(err,foundArmament)=>{
+        res.render('armaments/show.ejs',
+            {armament:foundArmament,
+        })
+    })
+})
+
 //SEED ROUTE - This will remove ALL current content in the DB. Only use to reset to default.
 armaments.get('/seed',(req,res)=>{
     Armament.collection.drop()
