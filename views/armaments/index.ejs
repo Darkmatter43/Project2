@@ -7,10 +7,14 @@
     <%- include ('../partials/nav.ejs')%>
     <h1>Alternate Armaments</h1>
         <%for(i=0;i< armaments.length;i++){%>
-            <div class='card'>
-                <%=armaments[i].img%>
-                <li><%=armaments[i].name%></li>
-            </div>
+            <a href="/armaments/<%=armaments[i].id%>">
+                <div class='card'>
+                    <img src="<%=armaments[i].img%>" alt="<%=armaments[i].name%>">
+                    <li><%=armaments[i].name%></li>
+                    <a href="/armements/edit">Edit this Armament</a>
+                </div>
+            </a>
         <%}%>
+        <a href="/armaments/new">Add an Armament</a>
 </body>
 </html>

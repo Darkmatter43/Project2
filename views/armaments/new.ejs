@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('../partials/head.ejs') %>
+</head>
+<body>
+    <h1>Add an Armament</h1>
+    <form action="/armaments" method='POST'>
+        Weapon name: <input type="text" name="name"></br>
+        Link to an image: <input type="text" name="img"></br>
+        Description: <input type="textarea" name="description"></br>
+        Weapon Owner: <input type="text" name="owner"></br>
+        Video Game of Origin: <input type="text" name="videoGame"></br>
+        <input type="submit" name="" value="Add Armament">
+    </form>
+</body>
+</html>
