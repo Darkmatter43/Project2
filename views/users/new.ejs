@@ -4,12 +4,19 @@
     <%- include('../partials/head.ejs')%>
 </head>
 <body>
-    <h1>Sign Up</h1>
-    <form action="/users" method='POST'>
-    Username: <input type="text" name="username" id=""></br>
-    Password: <input type="password" name="password" id=""></br>
-    <input type="submit" name="" value="Sign Up!"></br>
-    </form>
-    <a href="/">Return to Armaments</a>
+    <div class='sign-up'>
+        <h1>Sign Up</h1>
+        <form action="/users" method='POST'>
+            Username: <input type="text" name="username" id=""></br>
+            Password: <input type="password" name="password" id=""></br>
+            <input type="submit" name="" value="Sign Up!"></br>
+        </form>
+        <form action="/sessions/new">
+            <input type="submit" name="" value="Log In">
+        </form>
+        <form action="/">
+            <input type="submit" name="" value="Return to Armaments">
+        </form>
+    </div>
 </body>
 </html>

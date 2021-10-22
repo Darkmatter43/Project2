@@ -5,11 +5,18 @@
 </head>
 <body>
     <h1>Log In</h1>
-    <form action="/sessions" method='POST'>
-        Username: <input type="text" name="username" id=""></br>
-        Password: <input type="password" name="password" id=""></br>
-        <input type="submit" name="" value="Log In!"></br>
+    <div class='log-in'>
+        <form action="/sessions" method='POST'>
+            Username: <input type="text" name="username" id=""></br>
+            Password: <input type="password" name="password" id=""></br>
+            <input type="submit" name="" value="Log In!"></br>
         </form>
-        <a href="/">Return to Armaments</a>
+        <form action="/users/new">
+            <input type="submit" name="" value="Sign Up">
+        </form>
+        <form action="/">
+            <input type="submit" name="" value="Return to Armaments">
+        </form>
+    </div>
 </body>
 </html>
