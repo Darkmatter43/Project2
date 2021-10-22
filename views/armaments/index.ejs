@@ -6,18 +6,22 @@
 <body>
     <%- include ('../partials/nav.ejs')%>
     <h1>Alternate Armaments</h1>
+    <div class='card-container'>
         <%for(i=0;i< armaments.length;i++){%>
             <a href="/armaments/<%=armaments[i].id%>">
                 <div class='card'>
                     <img src="<%=armaments[i].img%>" alt="<%=armaments[i].name%>">
-                    <li><%=armaments[i].name%></li>
-                    <a href="/armaments/<%=armaments[i].id%>/edit">Edit this Armament</a>
-                    <form action="/armaments/<%=armaments[i].id%>?_method=DELETE" method='POST'>
-                        <input type="submit" name="" value="Annihilate Armament">
-                    </form>
+                    <ul id='info'>
+                        <li><%=armaments[i].name%></li>
+                        <a href="/armaments/<%=armaments[i].id%>/edit">Edit this Armament</a>
+                        <form action="/armaments/<%=armaments[i].id%>?_method=DELETE" method='POST'>
+                            <input type="submit" name="" value="Annihilate Armament">
+                        </form>
+                    </ul>
                 </div>
             </a>
         <%}%>
+    </div>
         <a href="/armaments/new">Add an Armament</a>
         
 </body>

@@ -1,0 +1,33 @@
+body{
+    background-color: black;
+}
+h1{
+    color:#3500D3;
+}
+.card{
+    width:20%;
+    background-color:#0C0032 ;
+}
+img{
+    width:100%;
+}
+nav{
+    display:flex;
+    background-color: #282828;
+    color:ivory;
+}
+.card-container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#info{
+    display:flex;
+    justify-content: space-around;
+}
+.card-container a{
+}
+input[type=submit]{
+    background-color: #3500D3; 
+    color:white;
+}

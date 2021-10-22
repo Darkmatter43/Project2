@@ -1,10 +1,15 @@
-
+<nav>
 <%if(currentUser){%>
     <h4>Welcome, <%=currentUser.username%></h4>
     <form action="/sessions?_method=DELETE" method='POST'>
     <input type="submit" value='Log Out'>
     </form>
 <%}else{%>
-    <a href="/users/new">Sign Up</a>
-    <a href="/sessions/new">Log In</a>
+    <form action="/users/new">
+        <input type="submit" name="" value="Sign Up">
+    </form>
+    <form action="/sessions/new">
+        <input type="submit" name="" value="Log In">
+    </form>
 <%}%>
+</nav>
