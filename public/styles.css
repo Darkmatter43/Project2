@@ -63,7 +63,8 @@ li{
     width:30%;
 }
 .show-div p{
-    width:30%
+    width:30%;
+    text-align: center;
 }
 /* LOGIN */
 .log-in{

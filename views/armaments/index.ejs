@@ -22,11 +22,10 @@
                         <form action="/armaments/<%=armaments[i].id%>/edit">
                             <input type="submit" name="" value="Edit this Armament">
                         </form>
-                        <!-- I am unsure what I did, but removing this a tag destroys my styling. Strange! -->
-                        
                         <form action="/armaments/<%=armaments[i].id%>?_method=DELETE" method='POST'>
                             <input type="submit" name="" value="Annihilate Armament">
                         </form>
+                        <!-- I am unsure what I did, but removing this a tag destroys my styling. Strange! -->
                         <a></a>
                     </ul>
                 </div>
