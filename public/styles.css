@@ -31,6 +31,14 @@ nav{
     color:var(--text-color);
     height: 3em;
     align-items: center;
+    padding:1em;
+    text-shadow:-1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+}
+nav input{
+    margin:1em;
 }
 .card-container{
     display:flex;
