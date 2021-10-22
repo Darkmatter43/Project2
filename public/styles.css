@@ -3,10 +3,13 @@ body{
 }
 h1{
     color:#3500D3;
+    text-align: center;
 }
 .card{
     width:20%;
     background-color:#0C0032 ;
+    padding:1em;
+    margin:1em;
 }
 img{
     width:100%;
