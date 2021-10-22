@@ -12,6 +12,9 @@ h1{
     text-align: center;
 }
 /* INDEX STYLING */
+.top-div{
+    text-align: center;
+}
 .card{
     width:20%;
     background-color:var(--darkest-purple) ;
@@ -35,7 +38,8 @@ nav{
 #info{
     display:flex;
     flex-direction:column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }
 input[type=submit]{
     background-color: var(--button-color); 
@@ -45,3 +49,12 @@ li{
     list-style-type: none;
 }
 /* SHOW PAGE STYLING */
+.show-div{
+    /* background-color: var(--grey); */
+    color:var(--text-color);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* LOGIN */
