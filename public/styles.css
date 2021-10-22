@@ -50,6 +50,9 @@ input[type=submit]{
 li{
     list-style-type: none;
 }
+.card input[type=submit]{
+    width:100%;
+}
 /* SHOW PAGE STYLING */
 .show-div{
     /* background-color: var(--grey); */
@@ -78,4 +81,16 @@ li{
     flex-direction: column;
     align-items: center;
     color:var(--text-color);
+}
+
+@media (max-width:500px){
+    .card{
+        width:100%;
+        background-color:var(--darkest-purple) ;
+        padding:1em;
+        margin:1em;
+    }
+    .card input[type='submit']{
+        width:100%;
+    }
 }
