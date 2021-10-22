@@ -28,7 +28,9 @@ img{
 nav{
     display:flex;
     background-color:var(--grey) ;
-    color:ivory;
+    color:var(--text-color);
+    height: 3em;
+    align-items: center;
 }
 .card-container{
     display:flex;
@@ -56,6 +58,12 @@ li{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+.show-div img{
+    width:30%;
+}
+.show-div p{
+    width:30%
 }
 /* LOGIN */
 .log-in{
