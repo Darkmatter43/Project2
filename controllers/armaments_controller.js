@@ -1,6 +1,7 @@
 const express=require('express')
 const Armament = require('../models/armaments.js')
 const armaments = express.Router()
+const User = require('../models/users.js')
 
 const isAuthenticated=(req,res,next)=>{
     if(req.session.currentUser){
@@ -47,11 +48,16 @@ armaments.get('/new',isAuthenticated,(req,res)=>{
 
 //CREATE ROUTE
 armaments.post('/',(req,res)=>{
-    Armament.create(req.body,(err,createdArmament)=>{
-        res.redirect('/')
+    User.findById(req.session.currentUser._id,(err,foundUser)=>{
+        Armament.create(req.body,(err,createdArmament)=>{
+            foundUser.arms.push(createdArmament)
+            foundUser.save((err,data)=>{
+                res.redirect('/')
+            })
+        })
     })
+    
 })
-
 
 //DELETE ROUTE
 armaments.delete('/:id',isAuthenticated,(req,res)=>{
