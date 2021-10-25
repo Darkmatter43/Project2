@@ -33,9 +33,18 @@ armaments.get('/:id/edit',isAuthenticated,(req,res)=>{
 })
 
 //UPDATE ROUTE
+//Using quite a bit of code from the markdown here.
 armaments.put('/:id',(req,res)=>{
+    //Finding and updating I was able to do before!
     Armament.findByIdAndUpdate(req.params.id,req.body,{new:true},(err,updatedArmament)=>{
-        res.redirect('/armaments/'+req.params.id)
+    //here is some new stuff...
+        User.findOne({'armaments._id':req.params.id},(err,foundUser)=>{
+            foundUser.arms.id(req.params.id).remove()
+            foundUser.arms.push(updatedArmament)
+            foundUser.save((err,data)=>{
+                res.redirect('/')
+            })
+        })
     })
 })
 
