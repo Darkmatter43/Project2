@@ -4,6 +4,7 @@
     <%- include ('../partials/head.ejs') %>
 </head>
 <body>
+    <%- include ('../partials/nav.ejs')%>
     <h1>EDIT!</h1>
     <form action="/armaments/<%=armament.id%>?_method=PUT" method='POST'>
         Weapon name: <input type="text" name="name" value='<%=armament.name%>'></br>

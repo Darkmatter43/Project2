@@ -10,6 +10,16 @@ users.get('/new',(req,res)=>{
     })
 })
 
+//SHOW ROUTE
+users.get('/:id',(req,res)=>{
+    User.findById(req.params.id,(err,foundUser)=>{
+        res.render('users/show.ejs',
+            {user:foundUser,
+            currentUser:req.session.currentUser
+        })
+    })
+})
+
 //POST ROUTE
 users.post('/',(req,res)=>{
     req.body.password=bcrypt.hashSync(req.body.password,bcrypt.genSaltSync(10))

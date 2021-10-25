@@ -40,7 +40,9 @@ armaments.put('/:id',(req,res)=>{
 
 //NEW ROUTE
 armaments.get('/new',isAuthenticated,(req,res)=>{
-    res.render('armaments/new.ejs')
+    res.render('armaments/new.ejs',{
+        currentUser:req.session.currentUser
+    })
 })
 
 //CREATE ROUTE
@@ -50,14 +52,6 @@ armaments.post('/',(req,res)=>{
     })
 })
 
-//SHOW ROUTE
-armaments.get('/:id',(req,res)=>{
-    Armament.findById(req.params.id,(err,foundArmament)=>{
-        res.render('armaments/show.ejs',
-            {armament:foundArmament,
-        })
-    })
-})
 
 //DELETE ROUTE
 armaments.delete('/:id',isAuthenticated,(req,res)=>{
@@ -107,6 +101,14 @@ armaments.get('/seed',(req,res)=>{
 })
 
 
-
+//SHOW ROUTE
+armaments.get('/:id',(req,res)=>{
+    Armament.findById(req.params.id,(err,foundArmament)=>{
+        res.render('armaments/show.ejs',
+            {armament:foundArmament,
+            currentUser:req.session.currentUser
+        })
+    })
+})
 
 module.exports=armaments
