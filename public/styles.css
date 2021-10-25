@@ -77,6 +77,11 @@ li{
     width:30%;
     text-align: center;
 }
+/* USER SHOW PAGE */
+#return{
+    display: flex;
+    justify-content: center;
+}
 /* LOGIN */
 .log-in{
     display:flex;

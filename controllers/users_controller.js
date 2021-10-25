@@ -10,9 +10,10 @@ users.get('/new',(req,res)=>{
     })
 })
 
+//For some reason, even if I manually type in anohter user's name here, I only get the current logged in user's page to show up. I have yet to figure out where this issue comes from. 
 //SHOW ROUTE
 users.get('/:id',(req,res)=>{
-    User.findById(req.session.currentUser.username,(err,foundUser)=>{
+    User.find({username:req.params.id},(err,foundUser)=>{
         res.render('users/show.ejs',
             {user:foundUser,
             currentUser:req.session.currentUser
