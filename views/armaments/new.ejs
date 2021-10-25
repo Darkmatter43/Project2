@@ -6,14 +6,19 @@
 <body>
     <%- include ('../partials/nav.ejs')%>
     <h1>Add an Armament</h1>
-    <form action="/armaments/new" method='POST'>
-        Weapon name: <input type="text" name="name"></br>
-        Link to an image: <input type="text" name="img"></br>
-        Description: <input type="textarea" name="description"></br>
-        Weapon Owner: <input type="text" name="owner"></br>
-        Video Game of Origin: <input type="text" name="videoGame"></br>
-        <input type="submit" name="" value="Add Armament">
-        <input type="hidden" name="creator" value='<%= currentUser.username%>'>
-    </form>
+    <div class='show-div'>
+        <form action="/armaments/new" method='POST'>
+            Weapon name: <input type="text" name="name"></br>
+            Link to an image: <input type="text" name="img"></br>
+            Description: <input type="textarea" name="description"></br>
+            Weapon Owner: <input type="text" name="owner"></br>
+            Video Game of Origin: <input type="text" name="videoGame"></br>
+            <input type="submit" name="" value="Add Armament">
+            <input type="hidden" name="creator" value='<%= currentUser.username%>'>
+        </form>
+        <form action="/">
+            <input type="submit" name="" value="Return to Index">
+        </form>
+    </div>
 </body>
 </html>
