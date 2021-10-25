@@ -5,17 +5,19 @@
 </head>
 <body>
     <%- include ('../partials/nav.ejs')%>
-    <h1>EDIT!</h1>
-    <form action="/armaments/<%=armament.id%>?_method=PUT" method='POST'>
-        Weapon name: <input type="text" name="name" value='<%=armament.name%>'></br>
-        Link to an image: <input type="text" name="img" value='<%=armament.img%>'></br>
-        Description: <input type="textarea" name="description" value='<%=armament.description%>'></br>
-        Weapon Owner: <input type="text" name="owner" value='<%=armament.owner%>'></br>
-        Video Game of Origin: <input type="text" name="videoGame" value='<%=armament.videoGame%>'></br>
-        <input type="submit" name="" value="Accept Adjustment">
-    </form>
-    <form action="/">
-        <input type="submit" name="" value="Return to Index">
-    </form>
+    <h1>Adjust Armament</h1>
+    <div class='show-div'>
+        <form action="/armaments/<%=armament.id%>?_method=PUT" method='POST'>
+            Weapon name: <input type="text" name="name" value='<%=armament.name%>'></br>
+            Link to an image: <input type="text" name="img" value='<%=armament.img%>'></br>
+            Description: <input type="textarea" name="description" value='<%=armament.description%>'></br>
+            Weapon Owner: <input type="text" name="owner" value='<%=armament.owner%>'></br>
+            Video Game of Origin: <input type="text" name="videoGame" value='<%=armament.videoGame%>'></br>
+            <input type="submit" name="" value="Accept Adjustment">
+        </form>
+        <form action="/">
+            <input type="submit" name="" value="Return to Index">
+        </form>
+    </div>
 </body>
 </html>

@@ -6,6 +6,7 @@
 }
 body{
     background-color: black;
+    color:blue;
 }
 h1{
     color:var(--text-color);
@@ -63,7 +64,7 @@ li{
 }
 /* SHOW PAGE STYLING */
 .show-div{
-    /* background-color: var(--grey); */
+    background-color: var(--darkest-purple);
     color:var(--text-color);
     display:flex;
     flex-direction: column;

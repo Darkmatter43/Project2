@@ -38,7 +38,7 @@ armaments.put('/:id',(req,res)=>{
     //Finding and updating I was able to do before!
     Armament.findByIdAndUpdate(req.params.id,req.body,{new:true},(err,updatedArmament)=>{
     //here is some new stuff...
-        User.findOne({'armaments._id':req.params.id},(err,foundUser)=>{
+        User.find({'armaments._id':req.params.id},(err,foundUser)=>{
             foundUser.arms.id(req.params.id).remove()
             foundUser.arms.push(updatedArmament)
             foundUser.save((err,data)=>{
@@ -75,6 +75,7 @@ armaments.post('/',(req,res)=>{
 })
 
 //DELETE ROUTE
+//I do not want to remove the item from the user's page if it is deleted off of the index. Deleting off index should remove from the INDEX ONLY.
 armaments.delete('/:id',isAuthenticated,(req,res)=>{
     Armament.findByIdAndRemove(req.params.id,(err,deletedArmament)=>{
         res.redirect('/')
@@ -91,28 +92,32 @@ armaments.get('/seed',(req,res)=>{
                 description:'Larger than life',
                 img:'https://i.imgur.com/KqULY4u.jpeg',
                 owner:'Cloud Strife',
-                videoGame:'Final Fantasy VII'
+                videoGame:'Final Fantasy VII',
+                creator:'Darkmatter43'
             },
             {
                 name:'Master Sword',
                 description:'A sword powerful enough to banish evil',
                 img:'https://images-na.ssl-images-amazon.com/images/I/51N6jLGIGrL.__AC_SY445_SX342_QL70_ML2_.jpg',
                 owner:'Link',
-                videoGame:'Legend of Zelda Franchise'
+                videoGame:'Legend of Zelda Franchise',
+                creator:'Darkmatter43'
             },
             {
                 name:'Keyblade',
                 description:'A mysterious weapon that chooses its master',
                 img:'https://m.media-amazon.com/images/I/71Asij72cwL._AC_SX425_.jpg',
                 owner:'Sora',
-                videoGame:'Kingdom Hearts'
+                videoGame:'Kingdom Hearts',
+                creator:'Darkmatter43'
             },
             {
                 name:'Portal Gun',
                 description:'A device that shoots beams of light that can create portals on impact. These portals allow all objects that fit through it to travel between them, conserving momentum as they do',
                 img:'https://media.sketchfab.com/models/afd9a04e7c704846bc8f25ec81f57a4e/thumbnails/1cb7d43397cc48978cc89ddc5e90de71/b2765f87d3524b5d93ae8c8491d7c20a.jpeg',
                 owner:'Chell',
-                videoGame:'Portal'
+                videoGame:'Portal',
+                creator:'Darkmatter43'
             }
         ],
         (err,data)=>{
