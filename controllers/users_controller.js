@@ -12,7 +12,7 @@ users.get('/new',(req,res)=>{
 
 //SHOW ROUTE
 users.get('/:id',(req,res)=>{
-    User.findById(req.params.id,(err,foundUser)=>{
+    User.findById(req.session.currentUser.username,(err,foundUser)=>{
         res.render('users/show.ejs',
             {user:foundUser,
             currentUser:req.session.currentUser

@@ -8,14 +8,11 @@
     <h1>Allied Armaments</h1>
     <%for (i=0;i< currentUser.arms.length;i++){%>
         <div class='show-div'>
-            <img src="<%=currentUser.arms.img%>" alt="<%=currentUser.arms.name%>">
-            <h2><%=currentUser.arms.name%></h2>
-            <h5>User: <%=currentUser.arms.owner%></h5>
-            <p><%=currentUser.arms.description%></p>
-            <p>Source: <%=currentUser.arms.videoGame%></p>
-            <form action="/">
-                <input type="submit" name="" value="Return to Index">
-            </form>
+            <img src="<%=currentUser.arms[i].img%>" alt="<%=currentUser.arms[i].name%>">
+            <h2><%=currentUser.arms[i].name%></h2>
+            <h5>User: <%=currentUser.arms[i].owner%></h5>
+            <p><%=currentUser.arms[i].description%></p>
+            <p>Source: <%=currentUser.arms[i].videoGame%></p>
         </div>
     <%}%>
     <form action="/armaments" method='POST'>

@@ -47,7 +47,8 @@ armaments.get('/new',isAuthenticated,(req,res)=>{
 })
 
 //CREATE ROUTE
-armaments.post('/',(req,res)=>{
+//I am using a slightly modified version of the example given from one of the markdowns on creating relationships between models. I had to create a new post route just for this feature, because without it, anything using the post route would send null objects into the user's array and break some stuff. I might have been able to handle that differently, but this was the first and most simple solution I could think of. 
+armaments.post('/new',(req,res)=>{
     User.findById(req.session.currentUser._id,(err,foundUser)=>{
         Armament.create(req.body,(err,createdArmament)=>{
             foundUser.arms.push(createdArmament)
@@ -55,6 +56,11 @@ armaments.post('/',(req,res)=>{
                 res.redirect('/')
             })
         })
+    })
+})
+armaments.post('/',(req,res)=>{
+    Armament.create(req.body,(err,createdArmament)=>{
+        res.redirect('/')
     })
     
 })
