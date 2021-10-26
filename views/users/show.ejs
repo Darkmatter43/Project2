@@ -5,7 +5,7 @@
 </head>
 <body>
     <%- include ('../partials/nav.ejs')%>
-    <h1>Allied Armaments</h1>
+    <h1><%=currentUser.username%>'s Allied Armaments</h1>
     <div class='card-container'>
     <%for (i=0;i< currentUser.arms.length;i++){%>
         <div class='card'>
