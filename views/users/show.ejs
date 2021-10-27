@@ -5,15 +5,15 @@
 </head>
 <body>
     <%- include ('../partials/nav.ejs')%>
-    <h1><%=currentUser.username%>'s Allied Armaments</h1>
+    <h1><%=user.username%>'s Allied Armaments</h1>
     <div class='card-container'>
-    <%for (i=0;i< currentUser.arms.length;i++){%>
+    <%for (i=0;i< user.arms.length;i++){%>
         <div class='card'>
-            <img src="<%=currentUser.arms[i].img%>" alt="<%=currentUser.arms[i].name%>">
-            <h2><%=currentUser.arms[i].name%></h2>
-            <h5>User: <%=currentUser.arms[i].owner%></h5>
-            <p><%=currentUser.arms[i].description%></p>
-            <p>Source: <%=currentUser.arms[i].videoGame%></p>
+            <img src="<%=user.arms[i].img%>" alt="<%=user.arms[i].name%>">
+            <h2><%=user.arms[i].name%></h2>
+            <h5>User: <%=user.arms[i].owner%></h5>
+            <p><%=user.arms[i].description%></p>
+            <p>Source: <%=user.arms[i].videoGame%></p>
             <form action="/users/<%=i%>?_method=PUT" method='POST'>
             <input type="submit" value="Remove Armament">
             </form>
@@ -23,8 +23,10 @@
     <form action="/armaments" method='POST' id='return'>
         <input type="submit" value='Return to Index'>
     </form>
-    <form action="/users/<%=i%>?_method=DELETE" method='POST'>
-        <input type="submit" name="" value="DELETE USER">
-    </form>
+    <%if (user.username == currentUser.username){%>
+        <form action="/users/<%=i%>?_method=DELETE" method='POST'>
+            <input type="submit" name="" value="DELETE USER">
+        </form>
+    <%}%>
 </body>
 </html>

@@ -23,7 +23,6 @@ users.get('/new',(req,res)=>{
 users.put('/:id',(req,res)=>{
     User.findByIdAndUpdate(req.session.currentUser._id,req.body,{new:true},(err,updatedUser)=>{
         User.findOne(req.session.currentUser,(err,foundUser)=>{
-            console.log(foundUser)
             foundUser.arms.splice(req.params.id,1)
             foundUser.save((err,data)=>{
                 res.redirect('/')
